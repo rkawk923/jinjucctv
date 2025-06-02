@@ -1,8 +1,13 @@
-import streamlit as st
-from streamlit_folium import folium_static
-import folium
+# import streamlit as st
+# from streamlit_folium import folium_static
+# import folium
 from folium.plugins import MarkerCluster
-import pandas as pd
+# import pandas as pd
+
+import folium
+import streamlit as st
+
+from streamlit_folium import st_folium
 
 
 st.title("진주시 CCTV 현황")
@@ -24,4 +29,5 @@ for idx, row in df.iterrows():
         icon=folium.Icon(color="blue", icon="info-sign"),
     ).add_to(marker_cluster)
 
-folium_static(m)
+# folium_static(m)
+st_data = st_folium(m, width=725)
